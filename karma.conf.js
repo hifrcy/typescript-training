@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -17,8 +17,7 @@ module.exports = function(config) {
       'node_modules/lodash/lodash.min.js',
       'node_modules/babel-polyfill/dist/polyfill.js',
       'data/data.ts',
-      'data/**/*.ts',
-      'src/**/*.ts'
+      'src/**/*.ts',
     ],
 
     // https://github.com/angular/angular-cli/issues/2125#issuecomment-247395088
@@ -28,6 +27,12 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
+      'src/main/*.ts',
+      
+      'src/functions/*.ts',
+      'src/functions/various/*.ts',
+      'src/params/*.ts',
+      'src/promises/*.ts',
     ],
 
     // preprocess matching files before serving them to the browser
@@ -73,15 +78,15 @@ module.exports = function(config) {
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
-    
+
     // (!) IMPORTANT
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: [
-      'Chrome',
+      // 'Chrome',
       'ChromeHeadless',
-      'Firefox',
-      'IE',
+      // 'Firefox',
+      // 'IE',
       // 'PhantomJS'
     ],
 

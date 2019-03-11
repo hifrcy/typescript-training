@@ -1,5 +1,8 @@
 # typescript-training
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/riderx/typescript-training.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/hifrcy/typescript-training.svg?branch=exercises-step)](https://travis-ci.org/hifrcy/typescript-training)
+
 ## install
 
 Run:
@@ -32,6 +35,20 @@ Important thing, however, is **not to push** these temporary changes (`fit`,
 ## custom matchers
 
  * see [Jasmine-Matchers](https://github.com/JamieMason/Jasmine-Matchers)
+
+## Run only group of tests
+
+* First remove `'src/main/*.ts'` from `excludes:` section in `karma.comf.ts`
+* Then add the same line in `tsconfig.json` in `include:` section
+* now run test again, you will have to resolve all main test
+
+## Update
+We may update tests, to apply them fetch and merge the master branch back to
+your branch.
+
+```sh
+git merge pull push branch checkout origin master stash pop
+```
 
 ## progress
 
