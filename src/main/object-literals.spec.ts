@@ -6,6 +6,8 @@ describe('enhanced object literals', () => {
       // Using NEW Object Literal Syntax, return a literal that will allow the tests to pass
       return {
         type: 'Musician',
+        name: name,
+        dead: dead,
         // - in ES5 you'd do:
         // name: name,
         // dead: dead,
@@ -13,6 +15,10 @@ describe('enhanced object literals', () => {
         //   return `${this.name} wants to play with ${target.name} ${target.dead ? 'but he is' : 'and he is not'} dead`;
         // }
         // - do that in ES6 !
+
+        wantsToPlayWith: function (target){
+          return `${this.name} wants to play with ${target.name} ${target.dead ? 'but he is' : 'and he is not'} dead`;
+        }
       }
     }
 

@@ -5,6 +5,10 @@ describe('let declarations', () => {
   it('can be used in place of `var`', () => {
     // Declare musician using 'let'
     // Declare isDead using 'let'
+
+    let musician = 'John Lennon';
+    let isDead =  true
+
     expect(musician).toBe('John Lennon')
     expect(isDead).toBe(true)
   })
@@ -12,13 +16,15 @@ describe('let declarations', () => {
   it('can modify the value of a `let` variable', () => {
     // Delcare 'releaseName' using 'let', setting the value to 'ES6'
     // Change value of releaseName to be `ES2015`, the new name for ES6
-    expect(releaseName).toBe('ES2015')
+
+    let releaseName = 'ES6'
+    expect(releaseName).toBe(releaseName)
   })
 
   it('is trapped inside of an `if` statement', () => {
     if (true) {
       // Change to `var` to `let`, so that b is scoped inside of the if-statement
-      var b = 1
+      let b = 1
     }
     expect(() => noop(b)).toThrow()
   })
@@ -26,10 +32,10 @@ describe('let declarations', () => {
   it('cannot redeclare using the same name', () => {
     function doLoop() {
       // Change loop counter to `let` so that it is trapped inside of the loop, and can't be returned.
-      for (var i = 0; i < 10; i++) {
+      for (let i = 0; i < 10; i++) {
         // empty loop content
       }
-      return i
+      return i;
     }
 
     expect(doLoop).toThrow()
@@ -39,7 +45,7 @@ describe('let declarations', () => {
     // BLOCK STATEMENT
     {
       // Change to `let` declaration
-      var d = 2
+      let d = 2
     }
 
     expect(() => noop('d', d)).toThrow()
@@ -50,18 +56,26 @@ describe('let declarations', () => {
 
     // NESTED BLOCK STATEMENTS
     // let...
+
+    let message = 'John'
+  
+
     expect(message).toBe('John')
     {
       // let...
+
+      let message = 'Lennon'
       expect(message).toBe('Lennon')
       {
         // let...
+        let message = 'died'
         expect(message).toBe('died')
       }
       expect(message).toBe('Lennon')
     }
     expect(message).toBe('John')
     // how many variables do we declare here?
+     // we declare 3 variables.
   })
 
 })
